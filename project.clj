@@ -6,15 +6,6 @@
   :dependencies [[org.clojure/clojure "1.4.0"]]
   :plugins [[lein-cljsbuild "0.2.10"]]
   :cljsbuild {:builds [{
-                        :id "dev"
-                        :source-path "src"
-                        :compiler {
-                                   :output-to "main.js"
-                                   :jar true
-                                   :optimizations :simple
-                                   :pretty-print true
-                                   }}
-                       {
                         :id "prod"
                         :source-path "src"
                         :compiler {
@@ -22,4 +13,13 @@
                                    :jar true
                                    :optimizations :advanced
                                    :pretty-print false
+                                   }}
+                       {
+                        :id "dev"
+                        :source-path "src"
+                        :compiler {
+                                   :output-to "main.js"
+                                   :jar true
+                                   :optimizations :simple
+                                   :pretty-print true
                                    }}]})
