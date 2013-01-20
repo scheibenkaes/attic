@@ -1,4 +1,4 @@
-(defproject org.scheibenkaes/attic "0.1.0"
+(defproject org.scheibenkaes/attic "0.1.1"
   :description "Save stuff to local storage"
   :url "http://scheibenkaes.org"
   :license {:name "Eclipse Public License"

@@ -5,11 +5,9 @@
 (defn ^:export get-item
   "Retrieves a item identified by 'key'. Key can be a string or a keyword."
   [key]
-  (->>
-   (name key)
-   (.getItem local-storage)
+  (-> (.getItem local-storage (name key))
    js/JSON.parse
-   js->clj))
+   (js->clj :keywordize-keys true)))
 
 (defn ^:export set-item
   "Saves a object to the local storage. 'key' can be a string or keyword."
