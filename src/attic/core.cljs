@@ -1,4 +1,5 @@
-(ns attic.core)
+(ns attic.core
+  (:require [cljs.reader]))
 
 (def ^:const local-storage js/localStorage)
 
@@ -6,13 +7,13 @@
   "Retrieves a item identified by 'key'. Key can be a string or a keyword."
   [key]
   (-> (.getItem local-storage (name key))
-   js/JSON.parse
-   (js->clj :keywordize-keys true)))
+      (or "")
+      cljs.reader/read-string))
 
 (defn ^:export set-item
   "Saves a object to the local storage. 'key' can be a string or keyword."
   [key obj]
-  (let [f (if (string? obj) identity (comp js/JSON.stringify clj->js))]
+  (let [f (if (string? obj) identity pr-str)]
     (.setItem local-storage (name key) (f obj))))
 
 (defn ^:export remove-item
