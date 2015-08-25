@@ -1,11 +1,11 @@
-(defproject org.scheibenkaes/attic "0.2.0"
+(defproject org.scheibenkaes/attic "0.3.0"
   :description "Save stuff to local storage"
   :url "http://scheibenkaes.org"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.5.1"]
-                 [org.clojure/clojurescript "0.0-2156"]]
-  :plugins [[lein-cljsbuild "1.0.2"]]
+  :dependencies [[org.clojure/clojure "1.7.0"]
+                 [org.clojure/clojurescript "1.7.107"]]
+  :plugins [[lein-cljsbuild "1.1.0"]]
   :cljsbuild
   {:builds
    [{:source-paths ["src"],
